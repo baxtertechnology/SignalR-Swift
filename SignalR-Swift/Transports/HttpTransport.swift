@@ -26,7 +26,7 @@ public class HttpTransport: ClientTransportProtocol {
 
         let parameters = self.getConnectionParameters(connection: connection, connectionData: connectionData)
 
-        let encodedRequest = connection.getRequest(url: url, httpMethod: .get, encoding: URLEncoding.default, parameters: parameters, timeout: 30.0)
+        let encodedRequest = connection.getRequest(url: url, httpMethod: .post, encoding: URLEncoding.default, parameters: parameters, timeout: 30.0)
 
         encodedRequest.validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
